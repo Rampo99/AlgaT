@@ -58,7 +58,7 @@
                 </ImageView>
                 <ImageView fitHeight="400" fitWidth="400">
                     <image>
-                        <Image url="@images/MinHeap2.png" />
+                        <Image url="@images/MinHeap2.jpeg" />
                     </image>
                 </ImageView>
             </HBox>
@@ -137,7 +137,7 @@
 
     <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border5" visible="false">
         <top>
-            <Label text="Quali tra i seguenti è un Min Heap?" BorderPane.alignment="CENTER" />
+            <Label text="Quali tra i seguenti non è un Min Heap?" BorderPane.alignment="CENTER" />
         </top>
         <center>
             <GridPane alignment="CENTER" hgap="10.0" vgap="20.0">
@@ -147,22 +147,22 @@
                 <Label text="4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                 <ImageView fitHeight="200" fitWidth="300" GridPane.columnIndex="1">
                     <image>
-                        <Image url="@images/MaxHeap2.png" />
+                        <Image url="@images/Quiz1.jpeg" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="200" fitWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <image>
-                        <Image url="@images/MaxHeap2.png" />
+                        <Image url="@images/Quiz2.png" />
                     </image>
                 </ImageView>
                 <ImageView  fitHeight="200" fitWidth="300" GridPane.columnIndex="3">
                     <image>
-                        <Image url="@images/MaxHeap2.png" />
+                        <Image url="@images/Quiz3.jpeg" />
                     </image>
                 </ImageView>
                 <ImageView  fitHeight="200" fitWidth="300" GridPane.columnIndex="3" GridPane.rowIndex="1">
                     <image>
-                        <Image url="@images/MaxHeap2.png" />
+                        <Image url="@images/Quiz4.jpeg" />
                     </image>
                 </ImageView>
                 <fx:define>
@@ -188,7 +188,7 @@
             <VBox alignment="CENTER" spacing="10">
                 <ImageView fitWidth="500" fitHeight="300" BorderPane.alignment="CENTER">
                     <image>
-                        <Image url="@images/MaxHeap2.png"/>
+                        <Image url="@images/Quiz5.jpeg"/>
                     </image>
                 </ImageView>
                 <fx:define>
@@ -214,11 +214,11 @@
             <VBox alignment="CENTER">
                 <ImageView fitHeight="300" fitWidth="500">
                     <image>
-                        <Image url="@images/MaxHeap2.png"/>
+                        <Image url="@images/Quiz6.jpeg"/>
                     </image>
                 </ImageView>
                 <GridPane alignment="CENTER">
-                    <Label fx:id="resize" text="Quanto ritorna find max?" />
+                    <Label id="resize" text="Quanto ritorna find max?" />
                     <TextField GridPane.columnIndex="1"/>
                 </GridPane>
                 <Button text="CONFERMA" />
@@ -237,11 +237,11 @@
             <VBox alignment="CENTER">
                 <ImageView fitHeight="300" fitWidth="500">
                     <image>
-                        <Image url="@images/MaxHeap2.png"/>
+                        <Image url="@images/Quiz7.jpeg"/>
                     </image>
                 </ImageView>
                 <GridPane alignment="CENTER">
-                    <Label fx:id="resize" text="Quanto ritorna find min?" />
+                    <Label id="resize" text="Quanto ritorna find min?" />
                     <TextField GridPane.columnIndex="1"/>
                 </GridPane>
                 <Button text="CONFERMA" />
@@ -260,13 +260,13 @@
             <VBox alignment="CENTER">
                 <ImageView fitHeight="300" fitWidth="500">
                     <image>
-                        <Image url="@images/MaxHeap2.png"/>
+                        <Image url="@images/Quiz8.jpeg"/>
                     </image>
                 </ImageView>
                 <GridPane alignment="CENTER">
-                    <Label fx:id="resize" text="find max ritorna 89"/>
-                    <Label fx:id="resize" text="find min ritorna 18" GridPane.rowIndex="1"/>
-                    <Label fx:id="resize" text="size ritorna 10" GridPane.rowIndex="2"/>
+                    <Label id="resize" text="find max ritorna 89"/>
+                    <Label id="resize" text="find min ritorna 15" GridPane.rowIndex="1"/>
+                    <Label id="resize" text="size ritorna 10" GridPane.rowIndex="2"/>
                     <Button text="V" GridPane.columnIndex="1"/>
                     <Button text="V" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
                     <Button text="V" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
