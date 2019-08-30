@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <top>
+        <Label text="Scegli la lezione che vuoi seguire" BorderPane.alignment="CENTER" />
+    </top>
+    <center>
+        <HBox alignment="CENTER" spacing="200">
+            <Button prefHeight="200" prefWidth="300" text="Lezione 1 : Heap" onMouseClicked="#heap1" fx:id="bheap"/>
+            <Button prefHeight="200" prefWidth="300" text="Lezione 2 : Heapsort" onMouseClicked="#heapsort1" fx:id="bheapsort"/>
+        </HBox>
+    </center>
+
+</BorderPane>
+

@@ -1,0 +1,29 @@
+Dalla figura questo é un max heap?
+- 1
+- 2
+- 3
+- 4
+
+Dati questi valori, qual é il corrispettivo MIN heap?
+- 1
+- 2
+- 3
+- 4
+
+Usando l'operzione insert con il valore x, dove finisce x?
+- 1
+- 2
+- 3
+- 4
+
+Usando l'operazione merge su questi 2 heap, che heap ottengo?
+- 1
+- 2
+- 3
+- 4
+
+Uando l'operazione max-heapify come diventa l'heap?
+- 1
+- 2
+- 3
+- 4

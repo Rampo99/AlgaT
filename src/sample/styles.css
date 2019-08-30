@@ -1,0 +1,17 @@
+.button {
+ -fx-background-color: #c2c0c0;
+ -fx-text-fill: black;
+ -fx-font-size: 20.0;
+
+}
+
+.label {
+ -fx-font-size: 30.0;
+ -fx-padding:75 0 0 0;
+}
+
+#resize {
+ -fx-font-size: 15.0;
+ -fx-padding:0 0 0 0;
+
+}
