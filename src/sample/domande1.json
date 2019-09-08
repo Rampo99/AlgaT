@@ -7,7 +7,7 @@
 		"r2": "risposta2",
 		"r3": "risposta3",
 		"r4": "risposta4",	
-		"true": "3"
+		"true": "risposta3"
 	},
 	{
 		"testo": "Quale combinazione dà come risultato un Max Heap?",
@@ -17,29 +17,27 @@
 		"r2": "risposta2",
 		"r3": "risposta3",
 		"r4": "risposta4",
-		"true": "4"
+		"true": "risposta4"
 	},
 	{
-		"testo": "testo",
+		"testo": "testo1",
 		"immagine": "immagine",
 		"tipo": "Inserimento",
-		"risposte": "risposta1",
 		"true": "31"
 	},
 	{
-		"testo": "testo",
+		"testo": "testo2",
 		"immagine": "immagine",
-		"tipo": "Inserimento",		
-		"risposte": "risposta1",
+		"tipo": "Inserimento",
 		"true": "1"
 	},
 	{
 		"testo": "Rispondi se è vero o falso",
 		"immagine": "immagine",
 		"tipo": "VeroFalso",
-		"r1": "risposta1",
-		"r2": "risposta2",
-		"r3": "risposta3",
+		"r1": "find max ritorna 89",
+		"r2": "find min ritorna 18",
+		"r3": "size ritorna 10",
 		"a1": "F",
 		"a2": "F",
 		"a3": "V"
