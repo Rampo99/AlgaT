@@ -23,6 +23,8 @@ public class Heap<T extends Comparable<T>> {
                 elementi.set(k, parent);
                 elementi.set(p, item);
                 k = p;
+            } else {
+                break;
             }
         }
     }
@@ -58,9 +60,14 @@ public class Heap<T extends Comparable<T>> {
             }
         }
     }
+    public boolean isEmpty() {
+        return elementi.isEmpty();
 
+    }
     public int size() {
         return elementi.size();
     }
+
+
 
 }

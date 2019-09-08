@@ -12,6 +12,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -32,9 +37,9 @@ public class Controller1 {
     public BorderPane border3;
     public BorderPane border4;
     public BorderPane border5;
-    public GridPane tipovf;
-    public GridPane tipoinserisci;
-    public GridPane tiposelezione;
+    public BorderPane tipovf;
+    public BorderPane tipoinserisci;
+    public BorderPane tiposelezione;
     public Label lb1;
     public Label lberror1;
     public Label b4label;
@@ -44,15 +49,19 @@ public class Controller1 {
     public RadioButton rb4;
     public Image img1;
     public ImageView imgview;
-    public ToggleGroup Quiz;
+    public ToggleGroup Quiz = new ToggleGroup();
     public Button keep;
     public Button bcreateheap;
     public Button binsert;
     public Button bfindmin;
     public Button bfindmax;
     public Button bsize;
+    public Circle c1;
+    public Line l1;
+    public Line l2;
     private String rispSelezione;
     public Heap heap;
+    public StackPane sc1;
     public void goback1() throws IOException {
         Stage primaryStage = (Stage) back1.getScene().getWindow();
         Parent newRoot = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -102,19 +111,38 @@ public class Controller1 {
     }
     public void fsize(){
         b4label.setText("Il numero di elementi del tuo heap: " + heap.size());
-
     }
     public void finsert(){
-        heap.insert(5);
+        int z = 5;
+
+        if(heap.size()== 0) {
+
+            Text txt = new Text(""+z);
+            txt.setLayoutX(700);
+            txt.setLayoutY(350);
+            c1.setVisible(true);
+        }
+        if(heap.size()== 1){
+            l1.setVisible(true);
+        }
+        if(heap.size()==2){
+            l2.setVisible(true);
+        }
+        heap.insert(z);
         b4label.setText("Hai aggiunto l'elemento 5 all'Heap!");
+
     }
-    public void gonext4()  throws IOException,ParseException{
+    public void gonext4()  throws IOException,ParseException,NullPointerException{
         border4.setVisible(false);
         border5.setVisible(true);
         JSONParser parser = new JSONParser();
         JSONArray a = (JSONArray) parser.parse(new FileReader("D:\\GitHub Desktop Repositories\\AlgaT\\src\\sample\\domande1.json"));
         Iterator it = a.iterator();
         JSONObject jitem = (JSONObject) it.next();
+        rb1.setToggleGroup(Quiz);
+        rb2.setToggleGroup(Quiz);
+        rb3.setToggleGroup(Quiz);
+        rb4.setToggleGroup(Quiz);
         load(jitem);
 
         keep.setOnAction(new EventHandler<ActionEvent>() {
@@ -147,15 +175,17 @@ public class Controller1 {
             int selez = tipo.compareTo("Selezione");
             int verof = tipo.compareTo("VeroFalso");
             int inser = tipo.compareTo("Inserimento");
+            rb1.setText((String) item.get("r1"));
+            rb2.setText((String) item.get("r2"));
+            rb3.setText((String) item.get("r3"));
+            rb4.setText((String) item.get("r4"));
             if (selez == 0) {
-                tiposelezione.setVisible(true);
-                tipovf.setVisible(false);
-                tipoinserisci.setVisible(false);
-                rb1.setText((String) item.get("r1"));
-                rb2.setText((String) item.get("r2"));
-                rb3.setText((String) item.get("r3"));
-                rb4.setText((String) item.get("r4"));
+                //tiposelezione.setVisible(true);
+                //tipovf.setVisible(false);
+                //tipoinserisci.setVisible(false);
+
                 rispSelezione = (String) item.get("true");
+                //
             }
             if (verof == 0) {
                 tiposelezione.setVisible(false);

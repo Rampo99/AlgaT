@@ -15,7 +15,8 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.TextField?>
-<BorderPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller1" alignment="CENTER">
+<?import javafx.scene.layout.StackPane?>
+<GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller1" >
     <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"  fx:id="border1">
 
         <top>
@@ -107,15 +108,15 @@
                         <Button text="Find_Min" disable="true" onAction="#ffindmin" fx:id="bfindmin"/>
                         <Button text="Size" disable="true" onAction="#fsize" fx:id="bsize"/>
                     </VBox>
-                    <Circle fill="White" layoutX="700.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                    <Circle layoutX="700.0" layoutY="350.0" fill="White"  radius="30.0" stroke="BLACK" strokeType="INSIDE" />
                     <Circle fill="White" layoutX="900.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
                     <Circle fill="White" layoutX="300.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
                     <Circle fill="White" layoutX="500.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
                     <Circle fill="White" layoutX="800.0" layoutY="250.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
                     <Circle fill="White" layoutX="400.0" layoutY="250.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    <Circle fill="White" layoutX="600.0" layoutY="150.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    <Line endX="400.0" endY="220.0" startX="600.0" startY="180.0" />
-                    <Line endX="800.0" endY="220.0" startX="600.0" startY="180.0" />
+                    <Circle fill="White" layoutX="600.0" layoutY="150.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" fx:id="c1"/>
+                    <Line endX="400.0" endY="220.0" startX="600.0" startY="180.0" visible="false" fx:id="l1"/>
+                    <Line endX="800.0" endY="220.0" startX="600.0" startY="180.0" visible="false" fx:id="l2"/>
                     <Line endX="300.0" endY="320.0" startX="400.0" startY="280.0" />
                     <Line endX="500.0" endY="320.0" startX="400.0" startY="280.0" />
                     <Line endX="700.0" endY="320.0" startX="800.0" startY="280.0" />
@@ -137,29 +138,30 @@
             <Label BorderPane.alignment="CENTER" fx:id="lb1" />
         </top>
         <center>
-            <AnchorPane>
                 <!--  <ImageView fitWidth="500" fitHeight="300" BorderPane.alignment="CENTER" fx:id="imgview">
 
                   </ImageView> -->
-                  <GridPane alignment="CENTER" fx:id="tiposelezione" visible="false" >
-                      <fx:define>
-                          <ToggleGroup fx:id="Quiz"/>
-                      </fx:define>
-                      <RadioButton toggleGroup="$Quiz" fx:id="rb1"/>
-                      <RadioButton toggleGroup="$Quiz" fx:id="rb2" />
-                      <RadioButton toggleGroup="$Quiz" fx:id="rb3" />
-                      <RadioButton toggleGroup="$Quiz" fx:id="rb4" />
 
-                      <Button text="CONFERMA" />
-                  </GridPane>
+                    <HBox alignment="CENTER" spacing="10">
+                      <RadioButton fx:id="rb1"/>
+                      <RadioButton fx:id="rb2" />
+                      <RadioButton fx:id="rb3" />
+                      <RadioButton fx:id="rb4" /><Button text="CONFERMA" fx:id="keep"/>
+                        
+                    </HBox>
 
-                  <GridPane alignment="CENTER" fx:id="tipoinserisci" visible="false">
-                      <Label id="resize" text="Quanto ritorna find max?"/>
+
+
+
+
+                <!--
+                  <BorderPane fx:id="tipoinserisci" visible="false">
+                      <Label id="resize"/>
                       <TextField GridPane.columnIndex="1"/>
                       <Button text="CONFERMA" fx:id="keep"/>
-                  </GridPane>
+                  </BorderPane>
 
-                  <GridPane alignment="CENTER" fx:id="tipovf" visible="false">
+                  <BorderPane fx:id="tipovf" visible="false">
                       <Label id="resize" text="find max ritorna 89"/>
                       <Label id="resize" text="find min ritorna 18" GridPane.rowIndex="1"/>
                       <Label id="resize" text="size ritorna 10" GridPane.rowIndex="2"/>
@@ -169,61 +171,20 @@
                       <Button text="F" GridPane.columnIndex="2"/>
                       <Button text="F" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
                       <Button text="F" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
-                  </GridPane>
-              </AnchorPane>
+                      <Button text="CONFERMA" />
+                  </BorderPane>
+                  !-->
 
 
 
-              <Label text="Hai sbagliato riprova!" fx:id="lberror1" visible="false" />
+
           </center>
+          <bottom>
+              <Label text="Hai sbagliato riprova!" fx:id="lberror1"/>
+          </bottom>
           <right>
               <Button text="avanti" BorderPane.alignment="CENTER" disable="true"/>
           </right>
-      </BorderPane>
-
-  <BorderPane>
-        <top>
-            <Label text="Quali tra i seguenti non è un Min Heap?" BorderPane.alignment="CENTER" />
-        </top>
-        <center>
-            <GridPane alignment="CENTER" hgap="10.0" vgap="20.0">
-                <Label text="1" />
-                <Label text="2" GridPane.rowIndex="1" />
-                <Label text="3" GridPane.columnIndex="2" />
-                <Label text="4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                <ImageView fitHeight="200" fitWidth="300" GridPane.columnIndex="1">
-                    <image>
-                        <Image url="@images/Quiz1.jpeg" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="200" fitWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                    <image>
-                        <Image url="@images/Quiz2.png" />
-                    </image>
-                </ImageView>
-                <ImageView  fitHeight="200" fitWidth="300" GridPane.columnIndex="3">
-                    <image>
-                        <Image url="@images/Quiz3.jpeg" />
-                    </image>
-                </ImageView>
-                <ImageView  fitHeight="200" fitWidth="300" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                    <image>
-                        <Image url="@images/Quiz4.jpeg" />
-                    </image>
-                </ImageView>
-                <fx:define>
-                    <ToggleGroup fx:id="Quiz1"/>
-                </fx:define>
-                <RadioButton text="1" GridPane.columnIndex="2" GridPane.rowIndex="2" toggleGroup="$Quiz1"/>
-                <RadioButton text="2" GridPane.columnIndex="2" GridPane.rowIndex="3" toggleGroup="$Quiz1"/>
-                <RadioButton text="3" GridPane.columnIndex="2" GridPane.rowIndex="4" toggleGroup="$Quiz1"/>
-                <RadioButton text="4" GridPane.columnIndex="2" GridPane.rowIndex="5" toggleGroup="$Quiz1"/>
-                <Button text="CONFERMA" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
-            </GridPane>
-        </center>
-        <right>
-            <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext5"/>
-        </right>
     </BorderPane>
-</BorderPane>
 
+</GridPane>
