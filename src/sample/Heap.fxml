@@ -109,7 +109,9 @@
                         <Button text="Find_Min" disable="true" onAction="#ffindmin" fx:id="bfindmin"/>
                         <Button text="Size" disable="true" onAction="#fsize" fx:id="bsize"/>
                     </VBox>
-                    <Circle layoutX="700.0" layoutY="350.0" fill="White"  radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                    <StackPane layoutX="700.0" layoutY="350.0" fx:id="sp1">
+                        <Circle  fill="White"  radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+                    </StackPane>
                     <Circle fill="White" layoutX="900.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
                     <Circle fill="White" layoutX="300.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
                     <Circle fill="White" layoutX="500.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />

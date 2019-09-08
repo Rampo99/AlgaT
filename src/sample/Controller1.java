@@ -25,6 +25,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.security.PublicKey;
 import java.util.Iterator;
+import java.util.Stack;
 
 
 public class Controller1 {
@@ -49,6 +50,7 @@ public class Controller1 {
     public BorderPane tipovf;
     public BorderPane tipoinserisci;
     public BorderPane tiposelezione;
+    public StackPane sp1;
     public Label lb1;
     public Label lberror1;
     public Label b4label;
@@ -135,8 +137,7 @@ public class Controller1 {
         if(heap.size()== 0) {
 
             Text txt = new Text(""+z);
-            txt.setLayoutX(700);
-            txt.setLayoutY(350);
+            sp1.getChildren().addAll(c1, txt);
             c1.setVisible(true);
         }
         if(heap.size()== 1){
@@ -189,6 +190,8 @@ public class Controller1 {
                     load((JSONObject) it.next());
                 } else {
                     next.setDisable(false);
+                    lberror1.setVisible(true);
+                    lberror1.setText("Hai risposto correttamente a tutte le domande! Clicca su avanti per tornare al menú lezioni");
                 }
             }
         } else {
@@ -204,6 +207,8 @@ public class Controller1 {
                     load((JSONObject) it.next());
                 } else {
                     next.setDisable(false);
+                    lberror1.setVisible(true);
+                    lberror1.setText("Hai risposto correttamente a tutte le domande! Clicca su avanti per tornare al menú lezioni");
                 }
             }
         }
