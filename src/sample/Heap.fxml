@@ -105,6 +105,7 @@
                     <VBox layoutX="1100.0" layoutY="150.0">
                         <Button text="Create_Heap" onAction="#fcreateheap" fx:id="bcreateheap"/>
                         <Button text="Insert" disable="true" onAction="#finsert" fx:id="binsert"/>
+                        <TextField />
                         <Button text="Find_Max" disable="true" onAction="#ffindmax" fx:id="bfindmax"/>
                         <Button text="Find_Min" disable="true" onAction="#ffindmin" fx:id="bfindmin"/>
                         <Button text="Size" disable="true" onAction="#fsize" fx:id="bsize"/>
