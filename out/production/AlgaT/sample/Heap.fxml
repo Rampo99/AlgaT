@@ -15,7 +15,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.TextField?>
-<GridPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller1" alignment="CENTER">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller1" alignment="CENTER">
     <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"  fx:id="border1">
 
         <top>
@@ -134,7 +134,6 @@
 
     <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border5" visible="false">
         <top>
-<<<<<<< HEAD
             <Label BorderPane.alignment="CENTER" fx:id="lb1" />
         </top>
         <center>
@@ -182,8 +181,8 @@
           </right>
       </BorderPane>
 
-  </GridPane>
-=======
+  <BorderPane>
+        <top>
             <Label text="Quali tra i seguenti non è un Min Heap?" BorderPane.alignment="CENTER" />
         </top>
         <center>
@@ -226,106 +225,5 @@
             <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext5"/>
         </right>
     </BorderPane>
+</BorderPane>
 
-    <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border6" visible="false">
-        <top>
-            <Label text="Quale combinazione dà come risultato un Max Heap?" BorderPane.alignment="CENTER"/>
-        </top>
-        <center>
-            <VBox alignment="CENTER" spacing="10">
-                <ImageView fitWidth="500" fitHeight="300" BorderPane.alignment="CENTER">
-                    <image>
-                        <Image url="@images/Quiz5.jpeg"/>
-                    </image>
-                </ImageView>
-                <fx:define>
-                    <ToggleGroup fx:id="Quiz2"/>
-                </fx:define>
-                <RadioButton text="18,24" toggleGroup="$Quiz2"/>
-                <RadioButton text="19,33" toggleGroup="$Quiz2"/>
-                <RadioButton text="8,101" toggleGroup="$Quiz2"/>
-                <RadioButton text="11,88" toggleGroup="$Quiz2"/>
-                <Button text="CONFERMA"/>
-            </VBox>
-        </center>
-        <right>
-            <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext6"/>
-        </right>
-    </BorderPane>
-
-    <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border7" visible="false">
-        <top>
-            <Label text="Inserisci la risposta corretta" BorderPane.alignment="CENTER"/>
-        </top>
-        <center>
-            <VBox alignment="CENTER">
-                <ImageView fitHeight="300" fitWidth="500">
-                    <image>
-                        <Image url="@images/Quiz6.jpeg"/>
-                    </image>
-                </ImageView>
-                <GridPane alignment="CENTER">
-                    <Label id="resize" text="Quanto ritorna find max?" />
-                    <TextField GridPane.columnIndex="1"/>
-                </GridPane>
-                <Button text="CONFERMA" />
-            </VBox>
-        </center>
-        <right>
-            <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext7"/>
-        </right>
-    </BorderPane>
-
-    <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border8" visible="false">
-        <top>
-            <Label text="Inserisci la risposta corretta" BorderPane.alignment="CENTER"/>
-        </top>
-        <center>
-            <VBox alignment="CENTER">
-                <ImageView fitHeight="300" fitWidth="500">
-                    <image>
-                        <Image url="@images/Quiz7.jpeg"/>
-                    </image>
-                </ImageView>
-                <GridPane alignment="CENTER">
-                    <Label id="resize" text="Quanto ritorna find min?" />
-                    <TextField GridPane.columnIndex="1"/>
-                </GridPane>
-                <Button text="CONFERMA" />
-            </VBox>
-        </center>
-        <right>
-            <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext8"/>
-        </right>
-    </BorderPane>
-
-    <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border9" visible="false">
-        <top>
-            <Label text="Rispondi se è vero o falso" BorderPane.alignment="CENTER"/>
-        </top>
-        <center>
-            <VBox alignment="CENTER">
-                <ImageView fitHeight="300" fitWidth="500">
-                    <image>
-                        <Image url="@images/Quiz8.jpeg"/>
-                    </image>
-                </ImageView>
-                <GridPane alignment="CENTER">
-                    <Label id="resize" text="find max ritorna 89"/>
-                    <Label id="resize" text="find min ritorna 18" GridPane.rowIndex="1"/>
-                    <Label id="resize" text="size ritorna 10" GridPane.rowIndex="2"/>
-                    <Button text="V" GridPane.columnIndex="1"/>
-                    <Button text="V" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-                    <Button text="V" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-                    <Button text="F" GridPane.columnIndex="2"/>
-                    <Button text="F" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
-                    <Button text="F" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
-                </GridPane>
-            </VBox>
-        </center>
-        <right>
-            <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext9"/>
-        </right>
-    </BorderPane>
-</GridPane>
->>>>>>> 39505b1a83215b49cb09b67b468dd749699835ef
