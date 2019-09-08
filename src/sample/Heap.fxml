@@ -15,7 +15,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.TextField?>
-<GridPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller1" alignment="CENTER">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller1">
     <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"  fx:id="border1">
 
         <top>
@@ -58,7 +58,7 @@
                 </ImageView>
                 <ImageView fitHeight="400" fitWidth="400">
                     <image>
-                        <Image url="@images/MinHeap2.png" />
+                        <Image url="@images/MinHeap2.jpeg" />
                     </image>
                 </ImageView>
             </HBox>
@@ -95,21 +95,17 @@
             <Label text="Utilizza questa serie di operazioni sull'heap per capire come funzionano" BorderPane.alignment="CENTER" />
         </top>
         <bottom>
-            <Label text="crea un heap vuoto" BorderPane.alignment="CENTER" />
-            <Label text="aggiungi un nuovo elemento all'heap" BorderPane.alignment="CENTER" />
-            <Label text="trova l'elemento con chiave maggiore di un max-heap" BorderPane.alignment="CENTER" />
-            <Label text="trova l'elemento con chiave minore di un min-heap" BorderPane.alignment="CENTER" />
-            <Label text="ritorna il numero di elementi di un heap" BorderPane.alignment="CENTER" />
+            <Label BorderPane.alignment="CENTER" fx:id="b4label" visible="false"/>
         </bottom>
         <center>
             <AnchorPane BorderPane.alignment="CENTER">
                 <children>
                     <VBox layoutX="1100.0" layoutY="150.0">
-                        <Button text="Create_Heap" />
-                        <Button text="Insert" />
-                        <Button text="Find_Max" />
-                        <Button text="Find_Min" />
-                        <Button text="Size" />
+                        <Button text="Create_Heap" onAction="#fcreateheap" fx:id="bcreateheap"/>
+                        <Button text="Insert" disable="true" onAction="#finsert" fx:id="binsert"/>
+                        <Button text="Find_Max" disable="true" onAction="#ffindmax" fx:id="bfindmax"/>
+                        <Button text="Find_Min" disable="true" onAction="#ffindmin" fx:id="bfindmin"/>
+                        <Button text="Size" disable="true" onAction="#fsize" fx:id="bsize"/>
                     </VBox>
                     <Circle fill="White" layoutX="700.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
                     <Circle fill="White" layoutX="900.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
@@ -134,150 +130,54 @@
             <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext4"/>
         </right>
     </BorderPane>
+<!-- //////////////////////////////////////////////////////////////////////////////////////// ////////////////////////////////////////////////////////////////////////////////////////-->
 
     <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border5" visible="false">
         <top>
-            <Label text="Quali tra i seguenti è un Min Heap?" BorderPane.alignment="CENTER" />
+            <Label BorderPane.alignment="CENTER" fx:id="lb1" />
         </top>
         <center>
-            <GridPane alignment="CENTER" hgap="10.0" vgap="20.0">
-                <Label text="1" />
-                <Label text="2" GridPane.rowIndex="1" />
-                <Label text="3" GridPane.columnIndex="2" />
-                <Label text="4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                <ImageView fitHeight="200" fitWidth="300" GridPane.columnIndex="1">
-                    <image>
-                        <Image url="@images/MaxHeap2.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="200" fitWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                    <image>
-                        <Image url="@images/MaxHeap2.png" />
-                    </image>
-                </ImageView>
-                <ImageView  fitHeight="200" fitWidth="300" GridPane.columnIndex="3">
-                    <image>
-                        <Image url="@images/MaxHeap2.png" />
-                    </image>
-                </ImageView>
-                <ImageView  fitHeight="200" fitWidth="300" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                    <image>
-                        <Image url="@images/MaxHeap2.png" />
-                    </image>
-                </ImageView>
-                <fx:define>
-                    <ToggleGroup fx:id="Quiz1"/>
-                </fx:define>
-                <RadioButton text="1" GridPane.columnIndex="2" GridPane.rowIndex="2" toggleGroup="$Quiz1"/>
-                <RadioButton text="2" GridPane.columnIndex="2" GridPane.rowIndex="3" toggleGroup="$Quiz1"/>
-                <RadioButton text="3" GridPane.columnIndex="2" GridPane.rowIndex="4" toggleGroup="$Quiz1"/>
-                <RadioButton text="4" GridPane.columnIndex="2" GridPane.rowIndex="5" toggleGroup="$Quiz1"/>
-                <Button text="CONFERMA" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
-            </GridPane>
-        </center>
-        <right>
-            <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext5"/>
-        </right>
-    </BorderPane>
+            <AnchorPane>
+                <!--  <ImageView fitWidth="500" fitHeight="300" BorderPane.alignment="CENTER" fx:id="imgview">
 
-    <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border6" visible="false">
-        <top>
-            <Label text="Quale combinazione dà come risultato un Max Heap?" BorderPane.alignment="CENTER"/>
-        </top>
-        <center>
-            <VBox alignment="CENTER" spacing="10">
-                <ImageView fitWidth="500" fitHeight="300" BorderPane.alignment="CENTER">
-                    <image>
-                        <Image url="@images/MaxHeap2.png"/>
-                    </image>
-                </ImageView>
-                <fx:define>
-                    <ToggleGroup fx:id="Quiz2"/>
-                </fx:define>
-                <RadioButton text="18,24" toggleGroup="$Quiz2"/>
-                <RadioButton text="19,33" toggleGroup="$Quiz2"/>
-                <RadioButton text="8,101" toggleGroup="$Quiz2"/>
-                <RadioButton text="11,88" toggleGroup="$Quiz2"/>
-                <Button text="CONFERMA"/>
-            </VBox>
-        </center>
-        <right>
-            <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext6"/>
-        </right>
-    </BorderPane>
+                  </ImageView> -->
+                  <GridPane alignment="CENTER" fx:id="tiposelezione" visible="false" >
+                      <fx:define>
+                          <ToggleGroup fx:id="Quiz"/>
+                      </fx:define>
+                      <RadioButton toggleGroup="$Quiz" fx:id="rb1"/>
+                      <RadioButton toggleGroup="$Quiz" fx:id="rb2" />
+                      <RadioButton toggleGroup="$Quiz" fx:id="rb3" />
+                      <RadioButton toggleGroup="$Quiz" fx:id="rb4" />
 
-    <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border7" visible="false">
-        <top>
-            <Label text="Inserisci la risposta corretta" BorderPane.alignment="CENTER"/>
-        </top>
-        <center>
-            <VBox alignment="CENTER">
-                <ImageView fitHeight="300" fitWidth="500">
-                    <image>
-                        <Image url="@images/MaxHeap2.png"/>
-                    </image>
-                </ImageView>
-                <GridPane alignment="CENTER">
-                    <Label fx:id="resize" text="Quanto ritorna find max?" />
-                    <TextField GridPane.columnIndex="1"/>
-                </GridPane>
-                <Button text="CONFERMA" />
-            </VBox>
-        </center>
-        <right>
-            <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext7"/>
-        </right>
-    </BorderPane>
+                      <Button text="CONFERMA" />
+                  </GridPane>
 
-    <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border8" visible="false">
-        <top>
-            <Label text="Inserisci la risposta corretta" BorderPane.alignment="CENTER"/>
-        </top>
-        <center>
-            <VBox alignment="CENTER">
-                <ImageView fitHeight="300" fitWidth="500">
-                    <image>
-                        <Image url="@images/MaxHeap2.png"/>
-                    </image>
-                </ImageView>
-                <GridPane alignment="CENTER">
-                    <Label fx:id="resize" text="Quanto ritorna find min?" />
-                    <TextField GridPane.columnIndex="1"/>
-                </GridPane>
-                <Button text="CONFERMA" />
-            </VBox>
-        </center>
-        <right>
-            <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext8"/>
-        </right>
-    </BorderPane>
+                  <GridPane alignment="CENTER" fx:id="tipoinserisci" visible="false">
+                      <Label id="resize" text="Quanto ritorna find max?"/>
+                      <TextField GridPane.columnIndex="1"/>
+                      <Button text="CONFERMA" fx:id="keep"/>
+                  </GridPane>
 
-    <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border9" visible="false">
-        <top>
-            <Label text="Rispondi se è vero o falso" BorderPane.alignment="CENTER"/>
-        </top>
-        <center>
-            <VBox alignment="CENTER">
-                <ImageView fitHeight="300" fitWidth="500">
-                    <image>
-                        <Image url="@images/MaxHeap2.png"/>
-                    </image>
-                </ImageView>
-                <GridPane alignment="CENTER">
-                    <Label fx:id="resize" text="find max ritorna 89"/>
-                    <Label fx:id="resize" text="find min ritorna 18" GridPane.rowIndex="1"/>
-                    <Label fx:id="resize" text="size ritorna 10" GridPane.rowIndex="2"/>
-                    <Button text="V" GridPane.columnIndex="1"/>
-                    <Button text="V" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-                    <Button text="V" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-                    <Button text="F" GridPane.columnIndex="2"/>
-                    <Button text="F" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
-                    <Button text="F" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
-                </GridPane>
-            </VBox>
-        </center>
-        <right>
-            <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext9"/>
-        </right>
+                  <GridPane alignment="CENTER" fx:id="tipovf" visible="false">
+                      <Label id="resize" text="find max ritorna 89"/>
+                      <Label id="resize" text="find min ritorna 18" GridPane.rowIndex="1"/>
+                      <Label id="resize" text="size ritorna 10" GridPane.rowIndex="2"/>
+                      <Button text="V" GridPane.columnIndex="1"/>
+                      <Button text="V" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                      <Button text="V" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                      <Button text="F" GridPane.columnIndex="2"/>
+                      <Button text="F" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                      <Button text="F" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+                  </GridPane>
+              </AnchorPane>
+
+
+
+              <Label text="Hai sbagliato riprova!" fx:id="lberror1" visible="false" />
+          </center>
+          <right>
+              <Button text="avanti" BorderPane.alignment="CENTER" disable="true"/>
+          </right>
     </BorderPane>
-</GridPane>
+</BorderPane>

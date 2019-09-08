@@ -23,14 +23,12 @@ public class Heap<T extends Comparable<T>> {
                 elementi.set(k, parent);
                 elementi.set(p, item);
                 k = p;
-            } else {
-                break;
             }
         }
     }
     public T delete(){
         if (elementi.size() == 0) {
-            System.out.println("Non ci sono elementi");;
+            System.out.println("Non ci sono elementi");
         }
         if (elementi.size() == 1) {
             return elementi.remove(0);
@@ -57,19 +55,12 @@ public class Heap<T extends Comparable<T>> {
                 elementi.set(max, temp);
                 k = max;
                 l = 2*k+1;
-            } else {
-                break;
             }
         }
     }
 
     public int size() {
         return elementi.size();
-    }
-
-    public boolean isEmpty() {
-        return elementi.isEmpty();
-
     }
 
 }
