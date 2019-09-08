@@ -265,7 +265,7 @@
                 </ImageView>
                 <GridPane alignment="CENTER">
                     <Label id="resize" text="find max ritorna 89"/>
-                    <Label id="resize" text="find min ritorna 18" GridPane.rowIndex="1"/>
+                    <Label id="resize" text="find min ritorna 15" GridPane.rowIndex="1"/>
                     <Label id="resize" text="size ritorna 10" GridPane.rowIndex="2"/>
                     <Button text="V" GridPane.columnIndex="1"/>
                     <Button text="V" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
