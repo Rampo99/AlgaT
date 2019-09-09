@@ -13,20 +13,20 @@
 		"testo": "Quale combinazione dà come risultato un Max Heap?",
 		"immagine": "@images/MaxHeap2.png",
 		"tipo": "Selezione",
-		"r1": "risposta1",
-		"r2": "risposta2",
-		"r3": "risposta3",
-		"r4": "risposta4",
-		"true": "risposta4"
+		"r1": "18,24",
+		"r2": "19,33",
+		"r3": "8,101",
+		"r4": "11,88",
+		"true": "11,88"
 	},
 	{
-		"testo": "testo1",
+		"testo": "Cosa ritorna findmax?",
 		"immagine": "immagine",
 		"tipo": "Inserimento",
 		"true": "31"
 	},
 	{
-		"testo": "testo2",
+		"testo": "Cosa ritorna findmin?",
 		"immagine": "immagine",
 		"tipo": "Inserimento",
 		"true": "1"
@@ -36,7 +36,7 @@
 		"immagine": "immagine",
 		"tipo": "VeroFalso",
 		"r1": "find max ritorna 89",
-		"r2": "find min ritorna 18",
+		"r2": "find min ritorna 15",
 		"r3": "size ritorna 10",
 		"a1": "F",
 		"a2": "F",
