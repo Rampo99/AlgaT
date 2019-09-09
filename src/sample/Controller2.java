@@ -3,6 +3,8 @@ package sample;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
@@ -16,8 +18,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import sample.Heap;
 
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Iterator;
 
 public class Controller2 {
@@ -57,14 +58,16 @@ public class Controller2 {
     public Label lr1;
     public Label lr2;
     public Label lr3;
-    public int selez;
-    public int verof;
-    public int inser;
-    public ToggleGroup Quiz = new ToggleGroup();
-    public ToggleGroup vf1 = new ToggleGroup();
-    public ToggleGroup vf2 = new ToggleGroup();
-    public ToggleGroup vf3 = new ToggleGroup();
-    public Iterator it;
+    private int selez;
+    private int verof;
+    private int inser;
+    private Image img1;
+    public ImageView imgview;
+    private ToggleGroup Quiz = new ToggleGroup();
+    private ToggleGroup vf1 = new ToggleGroup();
+    private ToggleGroup vf2 = new ToggleGroup();
+    private ToggleGroup vf3 = new ToggleGroup();
+    private Iterator it;
     public Heap<Integer> heap = new Heap<>();
     public Circle c1;
     public Circle c2;
@@ -95,8 +98,11 @@ public class Controller2 {
     public Line l3;
     public Line l4;
     public Line l5;
-    public int a = 1;
-    public boolean u = false;
+    private int a = 1;
+    private int i;
+    private int m = 0;
+    private boolean u = false;
+    private boolean o = false;
     public void goback1() throws IOException {
         Stage primaryStage = (Stage) back1.getScene().getWindow();
         Parent newRoot = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -170,6 +176,7 @@ public class Controller2 {
         } else {
             lerror.setText("Devi inserire un numero!");
         }
+        i = heap.size()-1;
     }
     public void fixing() {
         Text txt1, txt2, txt3, txt4, txt5, txt6;
@@ -264,34 +271,43 @@ public class Controller2 {
         }
     }
     public void buildheap(){
-
+        if(!o) {
             heap.sort1();
             fixing();
-            hp.setDisable(false);
-
-    }
-    public void heapify(){
-        if(!u) {
-            heap.sort2();
-            fixing();
-            u=true;
+            hp.setDisable(true);
+            o=true;
         } else {
             lerror.setVisible(true);
-            lerror.setText("Hai giá eseguito l'Heapsort!");
+            lerror.setText("Hai gia' eseguito il BuildHeap!");
+        }
+    }
+    public void heapify(){
+        if(!u && i!=0) {
+
+            heap.sort2(i);
+            fixing();
+            lerror.setVisible(true);
+            lerror.setText("Hai eseguito il ciclo n. "+ m + " dell'Heapify");
+            if(i==0) u=true;
+            i--;
+            m++;
+        } else {
+            lerror.setVisible(true);
+            lerror.setText("Hai gia' eseguito l'Heapify!");
         }
     }
 
     public void gonext6() throws IOException, ParseException,NullPointerException {
         border6.setVisible(false);
         JSONParser parser = new JSONParser();
-        JSONArray a = (JSONArray) parser.parse(new FileReader("D:\\GitHub Desktop Repositories\\AlgaT\\src\\sample\\domande2.json"));
+        JSONArray a = (JSONArray) parser.parse(new FileReader("src\\sample\\domande2.json"));
         it = a.iterator();
         JSONObject jitem = (JSONObject) it.next();
         load(jitem);
         border7.setVisible(true);
     }
 
-    public void keep(){
+    public void keep() {
         String v1 = "";
         String v2 = "";
         String v3 = "";
@@ -322,7 +338,7 @@ public class Controller2 {
                     next.setDisable(false);
                     next.setVisible(true);
                     lberror1.setVisible(true);
-                    lberror1.setText("Hai risposto correttamente a tutte le domande! Clicca su avanti per tornare al menú lezioni");
+                    lberror1.setText("Hai risposto correttamente a tutte le domande! Clicca su avanti per tornare al menu' lezioni");
                 }
             }
         } else {
@@ -340,7 +356,7 @@ public class Controller2 {
                     next.setDisable(false);
                     next.setVisible(true);
                     lberror1.setVisible(true);
-                    lberror1.setText("Hai risposto correttamente a tutte le domande! Hai completato il corso! Clicca su avanti per tornare al menú lezioni");
+                    lberror1.setText("Hai risposto correttamente a tutte le domande! Hai completato il corso! Clicca su avanti per tornare al menu' lezioni");
                 }
             }
         }
@@ -349,8 +365,9 @@ public class Controller2 {
     public void load(JSONObject item) {
 
         lb1.setText((String) item.get("testo"));
-        // img1 = new Image(new FileInputStream((String)item.get("immagine")));
-        // imgview = new ImageView(img1);
+        File k = new File((String)item.get("immagine"));
+        img1 = new Image(k.toURI().toString());
+        imgview.setImage(img1);
         String tipo = (String) item.get("tipo");
         selez = tipo.compareTo("Selezione");
         verof = tipo.compareTo("VeroFalso");

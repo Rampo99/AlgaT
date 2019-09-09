@@ -1,7 +1,7 @@
 [	
 	{
-		"testo": "Quale combinazione dà come risultato un Max Heap?",
-		"immagine": "immagine",
+		"testo": "Quale combinazione da' come risultato un Max Heap?",
+		"immagine": "HeapsortQ1.png",
 		"tipo": "Selezione",
 		"r1": "algoritmo di ordinamento, un grafo",
 		"r2": "algoritmo di ordinamento, l'heap",
@@ -10,8 +10,8 @@
 		"true": "algoritmo di ordinamento, l'heap"
 	},
 	{
-		"testo": "Quale sequenza è presente nell'array dopo aver eseguito l'heapify?",
-		"immagine": "immagine",
+		"testo": "Quale sequenza e' presente nell'array dopo aver eseguito l'heapify?",
+		"immagine": "C:\Users\pippo\Documents\GitHub\AlgaT\src\sample\images\HeapsortQ2.jpg",
 		"tipo": "Selezione",
 		"r1": "12,56,78,89,45",
 		"r2": "89,78,56,45,12",
@@ -21,23 +21,23 @@
 	},
 	{
 		"testo": "Che valore troviamo alla radice dopo aver eseguito BuildHeap?",
-		"immagine": "immagine",
+		"immagine": "C:\Users\pippo\Documents\GitHub\AlgaT\src\sample\images\HeapsortQ3.png",
 		"tipo": "Inserimento",
 		"true": "23"
 	},
 	{
-		"testo": "Essendo l'heap in foto giá un MaxHeap, quale elemento troviamo alla radice una volta eseguito l'heapify?",
-		"immagine": "immagine",
+		"testo": "Essendo l'heap in foto gia' un MaxHeap, quale elemento troviamo alla radice una volta eseguito l'heapify?",
+		"immagine": "C:\Users\pippo\Documents\GitHub\AlgaT\src\sample\images\HeapsortQ4.png",
 		"tipo": "Inserimento",
 		"true": "1"
 	},
 	{
-		"testo": "Rispondi se è vero o falso",
-		"immagine": "immagine",
+		"testo": "Rispondi se e' vero o falso",
+		"immagine": "C:\Users\pippo\Documents\GitHub\AlgaT\src\sample\images\HeapsortQ5.jpg",
 		"tipo": "VeroFalso",
-		"r1": "Dopo aver eseguito l'heapsort il valore alla radice è 30",
-		"r2": "La sequenza finale presente nell'array è 2,5,10,15,19,20,50,30",
-		"r3": "L'ultimo numero presente nell'array é 50",
+		"r1": "Dopo aver eseguito l'heapsort il valore alla radice e' 30",
+		"r2": "La sequenza finale presente nell'array e' 2,5,10,15,19,20,50,30",
+		"r3": "L'ultimo numero presente nell'array e' 50",
 		"a1": "F",
 		"a2": "F",
 		"a3": "V"

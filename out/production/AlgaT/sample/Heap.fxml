@@ -168,7 +168,7 @@
                 <BorderPane fx:id="tiposelezione" visible="false">
                     <center>
                         <VBox spacing="10">
-                          <RadioButton fx:id="rb1"/>
+                          <RadioButton fx:id="rb1" selected="true"/>
                           <RadioButton fx:id="rb2" />
                           <RadioButton fx:id="rb3" />
                           <RadioButton fx:id="rb4" />
@@ -193,9 +193,9 @@
                               <Label id="resize" fx:id="lr1"/>
                               <Label id="resize" fx:id="lr2" GridPane.rowIndex="1"/>
                               <Label id="resize" fx:id="lr3" GridPane.rowIndex="2"/>
-                              <RadioButton text="V" GridPane.columnIndex="1" fx:id="ve1"/>
-                              <RadioButton text="V" GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="ve2" />
-                              <RadioButton text="V" GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="ve3" />
+                              <RadioButton text="V" GridPane.columnIndex="1" fx:id="ve1" selected="true"/>
+                              <RadioButton text="V" GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="ve2" selected="true"/>
+                              <RadioButton text="V" GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="ve3" selected="true"/>
                               <RadioButton text="F" GridPane.columnIndex="2" fx:id="fa1" />
                               <RadioButton text="F" GridPane.rowIndex="1" GridPane.columnIndex="2" fx:id="fa2" />
                               <RadioButton text="F" GridPane.rowIndex="2" GridPane.columnIndex="2" fx:id="fa3" />
@@ -209,7 +209,7 @@
           </center>
 
           <bottom>
-              <Label text="Hai sbagliato riprova!" fx:id="lberror1" visible="false"/>
+              <Label text="Hai sbagliato riprova!" fx:id="lberror1" visible="false" BorderPane.alignment="CENTER"/>
           </bottom>
 
           <right>

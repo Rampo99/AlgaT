@@ -74,13 +74,12 @@ public class Heap<T extends Comparable<T>> {
             heapify(elementi.size(),i);
 
     }
-    public void sort2(){
-        for (int i=elementi.size()-1; i>=0; i--){
+    public void sort2(int i){
             T temp = elementi.get(0);
             elementi.set(0,elementi.get(i));
             elementi.set(i,temp);
             heapify(i,0);
-        }
+
     }
 
     public void heapify(int n, int i){

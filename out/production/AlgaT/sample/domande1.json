@@ -1,7 +1,7 @@
 [	
 	{
 		"testo": "Quale combinazione da come risultato un Min heap?",
-		"immagine": "Heap.jpg",
+		"immagine": "C:\Users\pippo\Documents\GitHub\AlgaT\src\sample\images\Quiz4.png",
 		"tipo": "Selezione",
 		"r1": "21,9",
 		"r2": "90,11",
@@ -10,8 +10,8 @@
 		"true": "88,11"
 	},
 	{
-		"testo": "Quale combinazione dà come risultato un Max Heap?",
-		"immagine": "@images/MaxHeap2.png",
+		"testo": "Quale combinazione da' come risultato un Max Heap?",
+		"immagine": "C:\Users\pippo\Documents\GitHub\AlgaT\src\sample\images\Quiz5.jpg",
 		"tipo": "Selezione",
 		"r1": "18,24",
 		"r2": "19,33",
@@ -21,19 +21,19 @@
 	},
 	{
 		"testo": "Cosa ritorna findmax?",
-		"immagine": "immagine",
+		"immagine": "C:\Users\pippo\Documents\GitHub\AlgaT\src\sample\images\Quiz6.jpg",
 		"tipo": "Inserimento",
 		"true": "31"
 	},
 	{
 		"testo": "Cosa ritorna findmin?",
-		"immagine": "immagine",
+		"immagine": "C:\Users\pippo\Documents\GitHub\AlgaT\src\sample\images\Quiz7.jpg",
 		"tipo": "Inserimento",
 		"true": "1"
 	},
 	{
-		"testo": "Rispondi se è vero o falso",
-		"immagine": "immagine",
+		"testo": "Rispondi se e' vero o falso",
+		"immagine": "C:\Users\pippo\Documents\GitHub\AlgaT\src\sample\images\Quiz8.jpg",
 		"tipo": "VeroFalso",
 		"r1": "find max ritorna 89",
 		"r2": "find min ritorna 15",

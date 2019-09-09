@@ -1,16 +1,12 @@
 package sample;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
@@ -20,14 +16,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import sample.Heap;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.security.PublicKey;
-import java.util.Collections;
 import java.util.Iterator;
-import java.util.Stack;
+
 
 
 public class Controller1 {
@@ -71,10 +63,10 @@ public class Controller1 {
     public StackPane sp5;
     public StackPane sp6;
     public StackPane sp7;
-    public ToggleGroup Quiz = new ToggleGroup();
-    public ToggleGroup vf1 = new ToggleGroup();
-    public ToggleGroup vf2 = new ToggleGroup();
-    public ToggleGroup vf3 = new ToggleGroup();
+    private ToggleGroup Quiz = new ToggleGroup();
+    private ToggleGroup vf1 = new ToggleGroup();
+    private ToggleGroup vf2 = new ToggleGroup();
+    private ToggleGroup vf3 = new ToggleGroup();
     public Circle c1;
     public Circle c2;
     public Circle c3;
@@ -93,13 +85,13 @@ public class Controller1 {
     private String risp3;
     public Heap<Integer> heap;
     public StackPane sc1;
-    public Iterator it;
+    private Iterator it;
     public TextField tinserisci;
     public TextField hins;
-    public int selez;
-    public int verof;
-    public int inser;
-    public int a = 1;
+    private int selez;
+    private int verof;
+    private int inser;
+    private int a = 1;
     public void goback1() throws IOException {
         Stage primaryStage = (Stage) back1.getScene().getWindow();
         Parent newRoot = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -143,10 +135,10 @@ public class Controller1 {
     }
     public void fextractmax(){
         if(heap.size()==0){
-            b4label.setText("Non puoi estrarre il massimo perché l'heap é vuoto!");
+            b4label.setText("Non puoi estrarre il massimo perché l'heap e' vuoto!");
 
         } else{
-            b4label.setText("Hai appena estratto il numero piú grande: " + heap.extractMax());
+            b4label.setText("Hai appena estratto il numero piu' grande: " + heap.extractMax());
             a--;
             fixing();
         }
@@ -154,9 +146,9 @@ public class Controller1 {
     }
     public void ffindmax(){
         if(heap.size()==0){
-            b4label.setText("L'Heap é vuoto non é presente il massimo!");
+            b4label.setText("L'Heap e' vuoto non e' presente il massimo!");
         } else {
-            b4label.setText("Il numero piú grande: " + heap.getMax());
+            b4label.setText("Il numero piu' grande: " + heap.getMax());
         }
     }
     public void fsize(){
@@ -296,13 +288,13 @@ public class Controller1 {
         border4.setVisible(false);
         border5.setVisible(true);
         JSONParser parser = new JSONParser();
-        JSONArray a = (JSONArray) parser.parse(new FileReader("D:\\GitHub Desktop Repositories\\AlgaT\\src\\sample\\domande1.json"));
+        JSONArray a = (JSONArray) parser.parse(new FileReader("src\\sample\\domande1.json"));
         it = a.iterator();
         JSONObject jitem = (JSONObject) it.next();
         load(jitem);
     }
 
-    public void keep() throws FileNotFoundException{
+    public void keep() {
         String v1 = "";
         String v2 = "";
         String v3 = "";
@@ -333,7 +325,7 @@ public class Controller1 {
                     next.setDisable(false);
                     next.setVisible(true);
                     lberror1.setVisible(true);
-                    lberror1.setText("Hai risposto correttamente a tutte le domande! Clicca su avanti per tornare al menú lezioni");
+                    lberror1.setText("Hai risposto correttamente a tutte le domande! Clicca su avanti per tornare al menu' lezioni");
                 }
             }
         } else {
@@ -351,7 +343,7 @@ public class Controller1 {
                     next.setDisable(false);
                     next.setVisible(true);
                     lberror1.setVisible(true);
-                    lberror1.setText("Hai risposto correttamente a tutte le domande! Clicca su avanti per tornare al menú lezioni");
+                    lberror1.setText("Hai risposto correttamente a tutte le domande! Clicca su avanti per tornare al menu' lezioni");
                 }
             }
         }
