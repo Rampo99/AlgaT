@@ -1,4 +1,4 @@
-﻿# Algat
+﻿# AlgaT
 AlgaT (Alga as Tutorial) é un tutorial interattivo che mostra il funzionamento della struttura dati Heap & Heapsort
 
 ## Descrizione
