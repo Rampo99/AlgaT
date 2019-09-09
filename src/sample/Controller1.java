@@ -21,6 +21,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import sample.Heap;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.security.PublicKey;
@@ -165,6 +166,7 @@ public class Controller1 {
         int z;
         if (!hins.getText().isEmpty()) {
             String p = hins.getText();
+            hins.setText("");
             if (p.matches("[0-9]+")){
                 z = Integer.parseInt(p);
 
@@ -300,7 +302,7 @@ public class Controller1 {
         load(jitem);
     }
 
-    public void keep(){
+    public void keep() throws FileNotFoundException{
         String v1 = "";
         String v2 = "";
         String v3 = "";
@@ -329,6 +331,7 @@ public class Controller1 {
                     load((JSONObject) it.next());
                 } else {
                     next.setDisable(false);
+                    next.setVisible(true);
                     lberror1.setVisible(true);
                     lberror1.setText("Hai risposto correttamente a tutte le domande! Clicca su avanti per tornare al menú lezioni");
                 }
@@ -346,17 +349,18 @@ public class Controller1 {
                     load((JSONObject) it.next());
                 } else {
                     next.setDisable(false);
+                    next.setVisible(true);
                     lberror1.setVisible(true);
                     lberror1.setText("Hai risposto correttamente a tutte le domande! Clicca su avanti per tornare al menú lezioni");
                 }
             }
         }
     }
-    public void load(JSONObject item) {
 
+    public void load(JSONObject item) {
             lb1.setText((String) item.get("testo"));
-            // img1 = new Image(new FileInputStream((String)item.get("immagine")));
-            // imgview = new ImageView(img1);
+            //Image image = new Image(getClass().getResourceAsStream((String)item.get("immagine")));
+          //  imgview.setImage(image);
             String tipo = (String) item.get("tipo");
             selez = tipo.compareTo("Selezione");
             verof = tipo.compareTo("VeroFalso");

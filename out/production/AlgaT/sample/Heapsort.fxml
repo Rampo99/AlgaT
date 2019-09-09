@@ -16,6 +16,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.StackPane?>
 <GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2" >
 
     <BorderPane stylesheets="@styles.css" fx:id="border1">
@@ -117,34 +118,63 @@
 
     <BorderPane stylesheets="@styles.css" fx:id="border6" visible="false">
         <top>
-            <Label text="inserisci 6 numeri DISTINTI nell'array" BorderPane.alignment="CENTER" />
+            <Label text="inserisci 6 numeri 'DISTINTI' nell'array" BorderPane.alignment="CENTER" />
         </top>
         <bottom>
+            <Label fx:id="lerror" visible="false"/>
         </bottom>
         <center>
             <AnchorPane BorderPane.alignment="CENTER">
                 <children>
-                    <Circle fill="White" layoutX="950.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    <Circle fill="White" layoutX="550.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    <Circle fill="White" layoutX="750.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    <Circle fill="White" layoutX="1050.0" layoutY="250.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    <Circle fill="White" layoutX="650.0" layoutY="250.0" radius="30.0" stroke="BLACK" strokeType="INSIDE"  />
-                    <Circle fill="White" layoutX="850.0" layoutY="150.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    <Line endX="650.0" endY="220.0" startX="850.0" startY="180.0" />
-                    <Line endX="1050.0" endY="220.0" startX="850.0" startY="180.0" />
-                    <Line endX="550.0" endY="320.0" startX="650.0" startY="280.0" />
-                    <Line endX="750.0" endY="320.0" startX="650.0" startY="280.0" />
-                    <Line endX="950.0" endY="320.0" startX="1050.0" startY="280.0" />
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="White" height="50.0" layoutX="170.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="White" height="50.0" layoutX="220.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="White" height="50.0" layoutX="270.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="White" height="50.0" layoutX="320.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="White" height="50.0" layoutX="370.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="White" height="50.0" layoutX="420.0" layoutY="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-                    <TextField layoutX="220.0" layoutY="270.0" />
-                    <Button layoutX="230.0" layoutY="320.0" mnemonicParsing="false" text="CONFERMA" />
-                    <Button layoutX="600.0" layoutY="450.0" mnemonicParsing="false" text="BuildHeap" />
-                    <Button layoutX="720.0" layoutY="450.0" mnemonicParsing="false" text="Heapify" />
+                    <StackPane layoutX="920.0" layoutY="320.0" fx:id="sp6"/>
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" visible="false" strokeType="INSIDE" fx:id="c6"/>
+                    <StackPane layoutX="520.0" layoutY="320.0" fx:id="sp4"/>
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" visible="false" strokeType="INSIDE" fx:id="c4"/>
+
+                    <StackPane layoutX="720.0" layoutY="320.0" fx:id="sp5"/>
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" visible="false"  strokeType="INSIDE" fx:id="c5"/>
+
+                    <StackPane layoutX="1020.0" layoutY="220.0" fx:id="sp3"/>
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" visible="false" strokeType="INSIDE" fx:id="c3"/>
+
+                    <StackPane layoutX="620.0" layoutY="220.0" fx:id="sp2" />
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" visible="false" strokeType="INSIDE"  fx:id="c2"/>
+                    <StackPane layoutX="820.0" layoutY="120.0" fx:id="sp1"/>
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" visible="false" strokeType="INSIDE" fx:id="c1"/>
+
+                    <Line endX="650.0" endY="220.0" startX="850.0" startY="180.0" visible="false" fx:id="l1"/>
+                    <Line endX="1050.0" endY="220.0" startX="850.0" startY="180.0" visible="false" fx:id="l2"/>
+                    <Line endX="550.0" endY="320.0" startX="650.0" startY="280.0" visible="false" fx:id="l3"/>
+                    <Line endX="750.0" endY="320.0" startX="650.0" startY="280.0" visible="false" fx:id="l4"/>
+                    <Line endX="950.0" endY="320.0" startX="1050.0" startY="280.0" visible="false" fx:id="l5"/>
+
+                    <StackPane layoutX="170.0" layoutY="200.0" fx:id="sp11" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="White" height="50.0" visible="false" stroke="BLACK" strokeType="INSIDE" width="50.0" fx:id="r1"/>
+
+                    <StackPane layoutX="220.0" layoutY="200.0" fx:id="sp12" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="White" height="50.0" visible="false"  stroke="BLACK" strokeType="INSIDE" width="50.0" fx:id="r2"/>
+
+
+                    <StackPane layoutX="270.0" layoutY="200.0" fx:id="sp13" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="White" height="50.0" visible="false"  stroke="BLACK" strokeType="INSIDE" width="50.0" fx:id="r3"/>
+
+
+                    <StackPane layoutX="320.0" layoutY="200.0" fx:id="sp14" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="White" height="50.0" visible="false"  stroke="BLACK" strokeType="INSIDE" width="50.0" fx:id="r4"/>
+
+
+                    <StackPane layoutX="370.0" layoutY="200.0" fx:id="sp15" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="White" height="50.0" visible="false"  stroke="BLACK" strokeType="INSIDE" width="50.0" fx:id="r5"/>
+
+
+                    <StackPane layoutX="420.0" layoutY="200.0" fx:id="sp16" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="White" height="50.0" visible="false"  stroke="BLACK" strokeType="INSIDE" width="50.0" fx:id="r6"/>
+
+
+                    <TextField layoutX="220.0" layoutY="270.0" fx:id="ins"/>
+                    <Button layoutX="230.0" layoutY="320.0" mnemonicParsing="false" text="CONFERMA" fx:id="add" onMouseClicked="#hinsert"/>
+                    <Button layoutX="600.0" layoutY="450.0" mnemonicParsing="false" text="BuildHeap" fx:id="bh" disable="true" onMouseClicked="#buildheap"/>
+                    <Button layoutX="720.0" layoutY="450.0" mnemonicParsing="false" text="Heapify" fx:id="hp" disable="true" onMouseClicked="#heapify"/>
                 </children>
             </AnchorPane>
         </center>
@@ -156,29 +186,67 @@
         </right>
     </BorderPane>
 
-    <BorderPane stylesheets="@styles.css" fx:id="border7" visible="false">
+    <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border7" visible="false">
         <top>
-            <Label text="Quale combinazione dà come risultato un Max Heap?" BorderPane.alignment="CENTER"/>
+            <Label BorderPane.alignment="CENTER" fx:id="lb1" />
         </top>
         <center>
-            <VBox alignment="CENTER" spacing="10">
-                <ImageView fitWidth="500" fitHeight="300" BorderPane.alignment="CENTER">
-                    <image>
-                        <Image url="@HeapsortQ1.png"/>
-                    </image>
-                </ImageView>
-                <fx:define>
-                    <ToggleGroup fx:id="Quiz2"/>
-                </fx:define>
-                <RadioButton text="algoritmo di ordinamento, un grafo" toggleGroup="$Quiz2"/>
-                <RadioButton text="algoritmo di ordinamento, l'heap" toggleGroup="$Quiz2"/>
-                <RadioButton text="algoritmo di ricerca,l'heap" toggleGroup="$Quiz2"/>
-                <RadioButton text="algortimo di ricerca,un grafo" toggleGroup="$Quiz2"/>
-                <Button text="CONFERMA"/>
-            </VBox>
+            <!--  <ImageView fitWidth="500" fitHeight="300" BorderPane.alignment="CENTER" fx:id="imgview">
+
+    </ImageView> -->
+            <GridPane alignment="CENTER">
+
+                <BorderPane fx:id="tiposelezione" visible="false">
+                    <center>
+                        <VBox spacing="10">
+                            <RadioButton fx:id="rb1"/>
+                            <RadioButton fx:id="rb2" />
+                            <RadioButton fx:id="rb3" />
+                            <RadioButton fx:id="rb4" />
+                            <Button text="CONFERMA" fx:id="keep" onMouseClicked="#keep"/>
+                        </VBox>
+                    </center>
+                </BorderPane>
+
+
+                <BorderPane fx:id="tipoinserisci" visible="false">
+                    <center>
+                        <VBox spacing="10">
+                            <TextField fx:id="tinserisci"/>
+                            <Button text="CONFERMA" onMouseClicked="#keep"/>
+                        </VBox>
+                    </center>
+                </BorderPane>
+                <BorderPane fx:id="tipovf" visible="false">
+                    <center>
+                        <VBox alignment="CENTER">
+                            <GridPane alignment="CENTER">
+                                <Label id="resize" fx:id="lr1"/>
+                                <Label id="resize" fx:id="lr2" GridPane.rowIndex="1"/>
+                                <Label id="resize" fx:id="lr3" GridPane.rowIndex="2"/>
+                                <RadioButton text="V" GridPane.columnIndex="1" fx:id="ve1"/>
+                                <RadioButton text="V" GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="ve2" />
+                                <RadioButton text="V" GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="ve3" />
+                                <RadioButton text="F" GridPane.columnIndex="2" fx:id="fa1" />
+                                <RadioButton text="F" GridPane.rowIndex="1" GridPane.columnIndex="2" fx:id="fa2" />
+                                <RadioButton text="F" GridPane.rowIndex="2" GridPane.columnIndex="2" fx:id="fa3" />
+                                <Button text="CONFERMA" GridPane.rowIndex="3" onMouseClicked="#keep"/>
+                            </GridPane>
+                        </VBox>
+                    </center>
+                </BorderPane>
+
+            </GridPane>
         </center>
+
+        <bottom>
+            <Label text="Hai sbagliato riprova!" fx:id="lberror1" visible="false"/>
+        </bottom>
+
         <right>
-            <Button text="avanti" BorderPane.alignment="CENTER"/>
+            <Button text="avanti" BorderPane.alignment="CENTER" disable="true" fx:id="next" visible="false" onMouseClicked="#gonext7"/>
         </right>
+
     </BorderPane>
+
 </GridPane>

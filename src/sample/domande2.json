@@ -1,0 +1,45 @@
+[	
+	{
+		"testo": "Quale combinazione dà come risultato un Max Heap?",
+		"immagine": "immagine",
+		"tipo": "Selezione",
+		"r1": "algoritmo di ordinamento, un grafo",
+		"r2": "algoritmo di ordinamento, l'heap",
+		"r3": "algoritmo di ricerca,l'heap",
+		"r4": "algortimo di ricerca,un grafo",	
+		"true": "algoritmo di ordinamento, l'heap"
+	},
+	{
+		"testo": "Quale sequenza è presente nell'array dopo aver eseguito l'heapify?",
+		"immagine": "immagine",
+		"tipo": "Selezione",
+		"r1": "12,56,78,89,45",
+		"r2": "89,78,56,45,12",
+		"r3": "12,56,45,78,89",
+		"r4": "12,45,56,78,89",
+		"true": "12,45,56,78,89"
+	},
+	{
+		"testo": "Che valore troviamo alla radice dopo aver eseguito BuildHeap?",
+		"immagine": "immagine",
+		"tipo": "Inserimento",
+		"true": "23"
+	},
+	{
+		"testo": "Essendo l'heap in foto giá un MaxHeap, quale elemento troviamo alla radice una volta eseguito l'heapify?",
+		"immagine": "immagine",
+		"tipo": "Inserimento",
+		"true": "1"
+	},
+	{
+		"testo": "Rispondi se è vero o falso",
+		"immagine": "immagine",
+		"tipo": "VeroFalso",
+		"r1": "Dopo aver eseguito l'heapsort il valore alla radice è 30",
+		"r2": "La sequenza finale presente nell'array è 2,5,10,15,19,20,50,30",
+		"r3": "L'ultimo numero presente nell'array é 50",
+		"a1": "F",
+		"a2": "F",
+		"a3": "V"
+	}
+]

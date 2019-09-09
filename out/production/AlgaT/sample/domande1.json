@@ -1,13 +1,13 @@
 [	
 	{
 		"testo": "Quale combinazione da come risultato un Min heap?",
-		"immagine": "D:\GitHub Desktop Repositories\AlgaT\src\sample\domande1.json\images\Heap.jpg",
+		"immagine": "Heap.jpg",
 		"tipo": "Selezione",
-		"r1": "risposta1",
-		"r2": "risposta2",
-		"r3": "risposta3",
-		"r4": "risposta4",	
-		"true": "risposta3"
+		"r1": "21,9",
+		"r2": "90,11",
+		"r3": "88,11",
+		"r4": "101,47",	
+		"true": "88,11"
 	},
 	{
 		"testo": "Quale combinazione dà come risultato un Max Heap?",
