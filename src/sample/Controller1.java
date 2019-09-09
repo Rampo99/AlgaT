@@ -24,6 +24,7 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.security.PublicKey;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Stack;
 
@@ -33,7 +34,7 @@ public class Controller1 {
     public Button next;
     public Button bcreateheap;
     public Button binsert;
-    public Button bfindmin;
+    public Button bextractmax;
     public Button bfindmax;
     public Button bsize;
     public RadioButton ve1;
@@ -50,7 +51,6 @@ public class Controller1 {
     public BorderPane tipovf;
     public BorderPane tipoinserisci;
     public BorderPane tiposelezione;
-    public StackPane sp1;
     public Label lb1;
     public Label lberror1;
     public Label b4label;
@@ -63,24 +63,42 @@ public class Controller1 {
     public RadioButton rb4;
     public Image img1;
     public ImageView imgview;
+    public StackPane sp1;
+    public StackPane sp2;
+    public StackPane sp3;
+    public StackPane sp4;
+    public StackPane sp5;
+    public StackPane sp6;
+    public StackPane sp7;
     public ToggleGroup Quiz = new ToggleGroup();
     public ToggleGroup vf1 = new ToggleGroup();
     public ToggleGroup vf2 = new ToggleGroup();
     public ToggleGroup vf3 = new ToggleGroup();
     public Circle c1;
+    public Circle c2;
+    public Circle c3;
+    public Circle c4;
+    public Circle c5;
+    public Circle c6;
+    public Circle c7;
     public Line l1;
     public Line l2;
+    public Line l3;
+    public Line l4;
+    public Line l5;
+    public Line l6;
     private String risp1;
     private String risp2;
     private String risp3;
-    public Heap heap;
+    public Heap<Integer> heap;
     public StackPane sc1;
     public Iterator it;
     public TextField tinserisci;
+    public TextField hins;
     public int selez;
     public int verof;
     public int inser;
-
+    public int a = 1;
     public void goback1() throws IOException {
         Stage primaryStage = (Stage) back1.getScene().getWindow();
         Parent newRoot = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -114,43 +132,164 @@ public class Controller1 {
     public void fcreateheap(){
         bcreateheap.setDisable(true);
         bfindmax.setDisable(false);
-        bfindmin.setDisable(false);
+        bextractmax.setDisable(false);
         bsize.setDisable(false);
         binsert.setDisable(false);
-        heap = new Heap();
+        heap = new Heap<Integer>();
         b4label.setVisible(true);
         b4label.setText("Hai creato un heap vuoto!");
 
     }
-    public void ffindmin(){
+    public void fextractmax(){
+        if(heap.size()==0){
+            b4label.setText("Non puoi estrarre il massimo perché l'heap é vuoto!");
+
+        } else{
+            b4label.setText("Hai appena estratto il numero piú grande: " + heap.extractMax());
+            a--;
+            fixing();
+        }
 
     }
     public void ffindmax(){
-
+        if(heap.size()==0){
+            b4label.setText("L'Heap é vuoto non é presente il massimo!");
+        } else {
+            b4label.setText("Il numero piú grande: " + heap.getMax());
+        }
     }
     public void fsize(){
         b4label.setText("Il numero di elementi del tuo heap: " + heap.size());
     }
-    public void finsert(){
-        int z = 5;
+    public void finsert() {
+        int z;
+        if (!hins.getText().isEmpty()) {
+            String p = hins.getText();
+            if (p.matches("[0-9]+")){
+                z = Integer.parseInt(p);
 
-        if(heap.size()== 0) {
-
-            Text txt = new Text(""+z);
-            sp1.getChildren().addAll(c1, txt);
-            c1.setVisible(true);
+                if (a < 8) {
+                    heap.insert(z);
+                    b4label.setText("Hai aggiunto l'elemento " + z + " all'Heap!");
+                    fixing();
+                    a++;
+                } else {
+                    b4label.setText("Hai raggiunto il numero massimo di elementi!");
+                }
+            } else {
+                b4label.setText("Hai inserito un carattere non consensito!");
+            }
+        } else {
+            b4label.setText("Devi inserire un numero!");
         }
-        if(heap.size()== 1){
-            l1.setVisible(true);
-        }
-        if(heap.size()==2){
-            l2.setVisible(true);
-        }
-        heap.insert(z);
-        b4label.setText("Hai aggiunto l'elemento 5 all'Heap!");
-
     }
+    public void fixing() {
+        sp1.getChildren().clear();
+        sp2.getChildren().clear();
+        sp3.getChildren().clear();
+        sp4.getChildren().clear();
+        sp5.getChildren().clear();
+        sp6.getChildren().clear();
+        sp7.getChildren().clear();
+        Text txt1, txt2, txt3, txt4, txt5, txt6, txt7;
 
+        if (heap.size() == 1) {
+            txt1 = new Text("" + heap.getElement(0));
+            sp1.getChildren().addAll(c1, txt1);
+            c1.setVisible(true);
+            c2.setVisible(false);
+            l1.setVisible(false);
+        }
+        if (heap.size() == 2) {
+            txt1 = new Text("" + heap.getElement(0));
+            txt2 = new Text("" + heap.getElement(1));
+            sp1.getChildren().addAll(c1, txt1);
+            sp2.getChildren().addAll(c2, txt2);
+            l1.setVisible(true);
+            l2.setVisible(false);
+            c2.setVisible(true);
+            c3.setVisible(false);
+        }
+        if (heap.size() == 3) {
+            txt1 = new Text("" + heap.getElement(0));
+            txt2 = new Text("" + heap.getElement(1));
+            txt3 = new Text("" + heap.getElement(2));
+            sp1.getChildren().addAll(c1, txt1);
+            sp2.getChildren().addAll(c2, txt2);
+            sp3.getChildren().addAll(c3, txt3);
+            l2.setVisible(true);
+            l3.setVisible(false);
+            c3.setVisible(true);
+            c4.setVisible(false);
+        }
+        if (heap.size() == 4) {
+            txt1 = new Text("" + heap.getElement(0));
+            txt2 = new Text("" + heap.getElement(1));
+            txt3 = new Text("" + heap.getElement(2));
+            txt4 = new Text("" + heap.getElement(3));
+            sp1.getChildren().addAll(c1, txt1);
+            sp2.getChildren().addAll(c2, txt2);
+            sp3.getChildren().addAll(c3, txt3);
+            sp4.getChildren().addAll(c4, txt4);
+            l3.setVisible(true);
+            l4.setVisible(false);
+            c4.setVisible(true);
+            c5.setVisible(false);
+        }
+        if (heap.size() == 5) {
+            txt1 = new Text("" + heap.getElement(0));
+            txt2 = new Text("" + heap.getElement(1));
+            txt3 = new Text("" + heap.getElement(2));
+            txt4 = new Text("" + heap.getElement(3));
+            txt5 = new Text("" + heap.getElement(4));
+            sp1.getChildren().addAll(c1, txt1);
+            sp2.getChildren().addAll(c2, txt2);
+            sp3.getChildren().addAll(c3, txt3);
+            sp4.getChildren().addAll(c4, txt4);
+            sp5.getChildren().addAll(c5, txt5);
+            l4.setVisible(true);
+            l5.setVisible(false);
+            c5.setVisible(true);
+            c6.setVisible(false);
+        }
+        if (heap.size() == 6) {
+            txt1 = new Text("" + heap.getElement(0));
+            txt2 = new Text("" + heap.getElement(1));
+            txt3 = new Text("" + heap.getElement(2));
+            txt4 = new Text("" + heap.getElement(3));
+            txt5 = new Text("" + heap.getElement(4));
+            txt6 = new Text("" + heap.getElement(5));
+            sp1.getChildren().addAll(c1, txt1);
+            sp2.getChildren().addAll(c2, txt2);
+            sp3.getChildren().addAll(c3, txt3);
+            sp4.getChildren().addAll(c4, txt4);
+            sp5.getChildren().addAll(c5, txt5);
+            sp6.getChildren().addAll(c6, txt6);
+            l5.setVisible(true);
+            l6.setVisible(false);
+            c6.setVisible(true);
+            c7.setVisible(false);
+
+        }
+        if (heap.size() == 7) {
+            txt1 = new Text("" + heap.getElement(0));
+            txt2 = new Text("" + heap.getElement(1));
+            txt3 = new Text("" + heap.getElement(2));
+            txt4 = new Text("" + heap.getElement(3));
+            txt5 = new Text("" + heap.getElement(4));
+            txt6 = new Text("" + heap.getElement(5));
+            txt7 = new Text("" + heap.getElement(6));
+            sp1.getChildren().addAll(c1, txt1);
+            sp2.getChildren().addAll(c2, txt2);
+            sp3.getChildren().addAll(c3, txt3);
+            sp4.getChildren().addAll(c4, txt4);
+            sp5.getChildren().addAll(c5, txt5);
+            sp6.getChildren().addAll(c6, txt6);
+            sp7.getChildren().addAll(c7, txt7);
+            l6.setVisible(true);
+            c7.setVisible(true);
+        }
+    }
     public void gonext4()  throws IOException,ParseException,NullPointerException{
         border4.setVisible(false);
         border5.setVisible(true);

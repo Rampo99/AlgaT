@@ -104,26 +104,41 @@
                 <children>
                     <VBox layoutX="1100.0" layoutY="150.0">
                         <Button text="Create_Heap" onAction="#fcreateheap" fx:id="bcreateheap"/>
-                        <Button text="Insert" disable="true" onAction="#finsert" fx:id="binsert"/>
+                        <HBox>
+                            <Button text="Insert" disable="true" onAction="#finsert" fx:id="binsert"/>
+                            <TextField fx:id="hins" alignment="BOTTOM_CENTER"/>
+                        </HBox>
                         <Button text="Find_Max" disable="true" onAction="#ffindmax" fx:id="bfindmax"/>
-                        <Button text="Find_Min" disable="true" onAction="#ffindmin" fx:id="bfindmin"/>
+                        <Button text="Extract_Max" disable="true" onAction="#fextractmax" fx:id="bextractmax"/>
                         <Button text="Size" disable="true" onAction="#fsize" fx:id="bsize"/>
                     </VBox>
-                    <StackPane layoutX="700.0" layoutY="350.0" fx:id="sp1">
-                        <Circle  fill="White"  radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    </StackPane>
-                    <Circle fill="White" layoutX="900.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    <Circle fill="White" layoutX="300.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    <Circle fill="White" layoutX="500.0" layoutY="350.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    <Circle fill="White" layoutX="800.0" layoutY="250.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    <Circle fill="White" layoutX="400.0" layoutY="250.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-                    <Circle fill="White" layoutX="600.0" layoutY="150.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" fx:id="c1"/>
+                    <StackPane layoutX="870.0" layoutY="320.0" fx:id="sp7" />
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" fx:id="c7"/>
+
+                    <StackPane layoutX="670.0" layoutY="320.0" fx:id="sp6" />
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" fx:id="c5" />
+
+                    <StackPane layoutX="270.0" layoutY="320.0" fx:id="sp4"/>
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" fx:id="c4"/>
+
+                    <StackPane layoutX="470.0" layoutY="320.0" fx:id="sp5"/>
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" fx:id="c6"/>
+
+                    <StackPane layoutX="770.0" layoutY="220.0" fx:id="sp3"/>
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" fx:id="c3"/>
+
+                    <StackPane layoutX="370.0" layoutY="220.0" fx:id="sp2"/>
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" fx:id="c2"/>
+
+                    <StackPane layoutX="570.0" layoutY="120.0" fx:id="sp1"/>
+                        <Circle fill="White"  radius="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" fx:id="c1"/>
+
                     <Line endX="400.0" endY="220.0" startX="600.0" startY="180.0" visible="false" fx:id="l1"/>
                     <Line endX="800.0" endY="220.0" startX="600.0" startY="180.0" visible="false" fx:id="l2"/>
-                    <Line endX="300.0" endY="320.0" startX="400.0" startY="280.0" />
-                    <Line endX="500.0" endY="320.0" startX="400.0" startY="280.0" />
-                    <Line endX="700.0" endY="320.0" startX="800.0" startY="280.0" />
-                    <Line endX="900.0" endY="320.0" startX="800.0" startY="280.0" />
+                    <Line endX="300.0" endY="320.0" startX="400.0" startY="280.0" visible="false" fx:id="l3"/>
+                    <Line endX="500.0" endY="320.0" startX="400.0" startY="280.0" visible="false" fx:id="l4"/>
+                    <Line endX="700.0" endY="320.0" startX="800.0" startY="280.0" visible="false" fx:id="l5"/>
+                    <Line endX="900.0" endY="320.0" startX="800.0" startY="280.0" visible="false" fx:id="l6"/>
                 </children>
             </AnchorPane>
         </center>
@@ -148,23 +163,23 @@
 
                 <BorderPane fx:id="tiposelezione" visible="false">
                     <center>
-                        <HBox spacing="10">
+                        <VBox spacing="10">
                           <RadioButton fx:id="rb1"/>
                           <RadioButton fx:id="rb2" />
                           <RadioButton fx:id="rb3" />
-                          <RadioButton fx:id="rb4" /><Button text="CONFERMA" fx:id="keep" onMouseClicked="#keep"/>
-
-                        </HBox>
+                          <RadioButton fx:id="rb4" />
+                          <Button text="CONFERMA" fx:id="keep" onMouseClicked="#keep"/>
+                        </VBox>
                     </center>
                 </BorderPane>
 
 
                 <BorderPane fx:id="tipoinserisci" visible="false">
                     <center>
-                        <HBox spacing="10">
+                        <VBox spacing="10">
                           <TextField fx:id="tinserisci"/>
                           <Button text="CONFERMA" onMouseClicked="#keep"/>
-                        </HBox>
+                        </VBox>
                     </center>
                 </BorderPane>
 

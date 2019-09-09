@@ -17,52 +17,54 @@ public class Heap<T extends Comparable<T>> {
         int k = elementi.size() - 1;
         while (k > 0) {
             int p = (k-1)/2;
-            T item = elementi.get(k);
-            T parent = elementi.get(p);
-            if (item.compareTo(parent) > 0) {
-                elementi.set(k, parent);
-                elementi.set(p, item);
-                k = p;
+            T a = elementi.get(k);
+            T b = elementi.get(p);
+            if (a.compareTo(b) > 0) {
+                elementi.set(k, b);
+                elementi.set(p, a);
+                k=p;
             } else {
                 break;
             }
         }
     }
-    public T delete(){
-        if (elementi.size() == 0) {
-            System.out.println("Non ci sono elementi");
-        }
+    public T getElement(int k){
+        return elementi.get(k);
+    }
+    public T getMax(){
+        return elementi.get(0);
+    }
+
+    public T extractMax(){
         if (elementi.size() == 1) {
             return elementi.remove(0);
         }
-        T hold = elementi.get(0);
+        T a = elementi.get(0);
         elementi.set(0, elementi.remove(elementi.size()-1));
         heapDelete();
-        return hold;
+        return a;
     }
 
     private void heapDelete() {
-        int k = 0;
-        int l = 2*k+1;
-        while (l < elementi.size()) {
-            int max=l, r=l+1;
+        int a = 0;
+        int b = 1;
+        while (b < elementi.size()) {
+            int max=b, r=b+1;
             if (r < elementi.size()) {
-                if (elementi.get(r).compareTo(elementi.get(l)) > 0) {
+                if (elementi.get(r).compareTo(elementi.get(b)) > 0) {
                     max++;
                 }
             }
-            if (elementi.get(k).compareTo(elementi.get(max)) < 0) {
-                T temp = elementi.get(k);
-                elementi.set(k, elementi.get(max));
-                elementi.set(max, temp);
-                k = max;
-                l = 2*k+1;
+            if (elementi.get(a).compareTo(elementi.get(max)) < 0) {
+                T delete = elementi.get(a);
+                elementi.set(a, elementi.get(max));
+                elementi.set(max, delete);
+                a = max;
+                b = 2*a+1;
+            } else {
+                break;
             }
         }
-    }
-    public boolean isEmpty() {
-        return elementi.isEmpty();
-
     }
     public int size() {
         return elementi.size();
