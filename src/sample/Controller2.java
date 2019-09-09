@@ -365,8 +365,7 @@ public class Controller2 {
     public void load(JSONObject item) {
 
         lb1.setText((String) item.get("testo"));
-        File k = new File((String)item.get("immagine"));
-        img1 = new Image(k.toURI().toString());
+        img1 = new Image((String)item.get("immagine"));
         imgview.setImage(img1);
         String tipo = (String) item.get("tipo");
         selez = tipo.compareTo("Selezione");
