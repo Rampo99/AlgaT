@@ -3,7 +3,6 @@ package sample;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
@@ -15,7 +14,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import sample.Heap;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
@@ -23,6 +21,7 @@ import java.util.Iterator;
 
 
 public class Controller1 {
+    public Heap<Integer> heap;
     public Button back1;
     public Button next;
     public Button bcreateheap;
@@ -54,8 +53,11 @@ public class Controller1 {
     public RadioButton rb2;
     public RadioButton rb3;
     public RadioButton rb4;
-    public Image img1;
-    public ImageView imgview;
+    public ImageView imgview1;
+    public ImageView imgview2;
+    public ImageView imgview3;
+    public ImageView imgview4;
+    public ImageView imgview5;
     public StackPane sp1;
     public StackPane sp2;
     public StackPane sp3;
@@ -83,8 +85,6 @@ public class Controller1 {
     private String risp1;
     private String risp2;
     private String risp3;
-    public Heap<Integer> heap;
-    public StackPane sc1;
     private Iterator it;
     public TextField tinserisci;
     public TextField hins;
@@ -92,6 +92,7 @@ public class Controller1 {
     private int verof;
     private int inser;
     private int a = 1;
+    private int k = 0;
     public void goback1() throws IOException {
         Stage primaryStage = (Stage) back1.getScene().getWindow();
         Parent newRoot = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -351,8 +352,24 @@ public class Controller1 {
 
     public void load(JSONObject item) {
             lb1.setText((String) item.get("testo"));
-            //Image image = new Image(getClass().getResourceAsStream((String)item.get("immagine")));
-          //  imgview.setImage(image);
+            if(k==0)imgview1.setVisible(true);
+            if(k==1){
+                imgview1.setVisible(false);
+                imgview2.setVisible(true);
+            }
+            if(k==2){
+                imgview2.setVisible(false);
+                imgview3.setVisible(true);
+            }
+            if(k==3){
+                imgview3.setVisible(false);
+                imgview4.setVisible(true);
+            }
+            if(k==4){
+                imgview4.setVisible(false);
+                imgview5.setVisible(true);
+            }
+            k++;
             String tipo = (String) item.get("tipo");
             selez = tipo.compareTo("Selezione");
             verof = tipo.compareTo("VeroFalso");

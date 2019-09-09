@@ -61,8 +61,11 @@ public class Controller2 {
     private int selez;
     private int verof;
     private int inser;
-    private Image img1;
-    public ImageView imgview;
+    public ImageView imgview1;
+    public ImageView imgview2;
+    public ImageView imgview3;
+    public ImageView imgview4;
+    public ImageView imgview5;
     private ToggleGroup Quiz = new ToggleGroup();
     private ToggleGroup vf1 = new ToggleGroup();
     private ToggleGroup vf2 = new ToggleGroup();
@@ -101,6 +104,7 @@ public class Controller2 {
     private int a = 1;
     private int i;
     private int m = 0;
+    private int k = 0;
     private boolean u = false;
     private boolean o = false;
     public void goback1() throws IOException {
@@ -365,8 +369,24 @@ public class Controller2 {
     public void load(JSONObject item) {
 
         lb1.setText((String) item.get("testo"));
-        img1 = new Image((String)item.get("immagine"));
-        imgview.setImage(img1);
+        if(k==0)imgview1.setVisible(true);
+        if(k==1){
+            imgview1.setVisible(false);
+            imgview2.setVisible(true);
+        }
+        if(k==2){
+            imgview2.setVisible(false);
+            imgview3.setVisible(true);
+        }
+        if(k==3){
+            imgview3.setVisible(false);
+            imgview4.setVisible(true);
+        }
+        if(k==4){
+            imgview4.setVisible(false);
+            imgview5.setVisible(true);
+        }
+        k++;
         String tipo = (String) item.get("tipo");
         selez = tipo.compareTo("Selezione");
         verof = tipo.compareTo("VeroFalso");

@@ -162,7 +162,34 @@
             <Label BorderPane.alignment="CENTER" fx:id="lb1" />
         </top>
         <center>
-            <ImageView fitWidth="500" fitHeight="300" BorderPane.alignment="CENTER" fx:id="imgview" />
+            <VBox alignment="CENTER">
+            <GridPane alignment="CENTER">
+                <ImageView fitHeight="300" fitWidth="500" fx:id="imgview1" visible="false" >
+                    <image>
+                        <Image url="@images/Quiz4.png"/>
+                    </image>
+                </ImageView>
+                <ImageView  fitHeight="300" fitWidth="500" fx:id="imgview2" visible="false">
+                    <image>
+                        <Image url="@images/Quiz5.jpeg" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="300" fitWidth="500" fx:id="imgview3" visible="false">
+                    <image>
+                        <Image url="@images/Quiz6.jpeg" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="300" fitWidth="500" fx:id="imgview4" visible="false">
+                    <image>
+                        <Image url="@images/Quiz7.jpeg" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="300" fitWidth="500"  fx:id="imgview5" visible="false">
+                    <image>
+                        <Image url="@images/Quiz8.jpeg" />
+                    </image>
+                </ImageView>
+            </GridPane>
             <GridPane alignment="CENTER">
 
                 <BorderPane fx:id="tiposelezione" visible="false">
@@ -206,6 +233,7 @@
                 </BorderPane>
 
             </GridPane>
+            </VBox>
           </center>
 
           <bottom>

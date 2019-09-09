@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.ToggleGroup?>
+
 <?import javafx.scene.layout.StackPane?>
 <GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2" >
 
@@ -187,7 +187,34 @@
             <Label BorderPane.alignment="CENTER" fx:id="lb1" />
         </top>
         <center>
-            <ImageView fitWidth="500" fitHeight="300" BorderPane.alignment="CENTER" fx:id="imgview"/>
+            <VBox alignment="CENTER">
+            <GridPane alignment="CENTER">
+                <ImageView fitHeight="300" fitWidth="500" fx:id="imgview1" visible="false" >
+                    <image>
+                        <Image url="@images/HeapsortQ1.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="300" fitWidth="500" fx:id="imgview2" visible="false">
+                    <image>
+                        <Image url="@images/HeapsortQ2.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="300" fitWidth="500" fx:id="imgview3" visible="false">
+                    <image>
+                        <Image url="@images/HeapsortQ3.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="300" fitWidth="500" fx:id="imgview4" visible="false">
+                    <image>
+                        <Image url="@images/HeapsortQ4.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="300" fitWidth="500" fx:id="imgview5" visible="false">
+                    <image>
+                        <Image url="@images/HeapsortQ5.jpg" />
+                    </image>
+                </ImageView>
+            </GridPane>
 
             <GridPane alignment="CENTER">
 
@@ -232,6 +259,7 @@
                 </BorderPane>
 
             </GridPane>
+            </VBox>
         </center>
 
         <bottom>
