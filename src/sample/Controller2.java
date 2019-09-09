@@ -124,12 +124,8 @@ public class Controller2 {
         border3.setVisible(true);
         border4.setVisible(false);
     }
-    public void goback5() {
-        border4.setVisible(true);
-        border5.setVisible(false);
-    }
     public void goback6() {
-        border5.setVisible(true);
+        border4.setVisible(true);
         border6.setVisible(false);
     }
 
@@ -147,10 +143,6 @@ public class Controller2 {
     }
     public void gonext4() {
         border4.setVisible(false);
-        border5.setVisible(true);
-    }
-    public void gonext5() {
-        border5.setVisible(false);
         border6.setVisible(true);
     }
 
@@ -278,7 +270,7 @@ public class Controller2 {
         if(!o) {
             heap.sort1();
             fixing();
-            hp.setDisable(true);
+            hp.setDisable(false);
             o=true;
         } else {
             lerror.setVisible(true);
@@ -297,7 +289,7 @@ public class Controller2 {
             m++;
         } else {
             lerror.setVisible(true);
-            lerror.setText("Hai gia' eseguito l'Heapify!");
+            lerror.setText("Heapify concluso!");
         }
     }
 

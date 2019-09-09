@@ -96,26 +96,6 @@
         </right>
     </BorderPane>
 
-    <BorderPane stylesheets="@styles.css" fx:id="border5" visible="false">
-        <top>
-            <Label text="Codice Main Heapsort" BorderPane.alignment="CENTER" />
-        </top>
-        <center>
-            <ImageView fx:id="Heap3" fitHeight="650" fitWidth="750">
-                <image>
-                    <Image url="@images/Heapsort31.png" />
-                </image>
-            </ImageView>
-        </center>
-        <left>
-            <Button text="indietro" BorderPane.alignment="CENTER" onMouseClicked="#goback5"/>
-
-        </left>
-        <right>
-            <Button text="avanti" BorderPane.alignment="CENTER" onMouseClicked="#gonext5"/>
-        </right>
-    </BorderPane>
-
     <BorderPane stylesheets="@styles.css" fx:id="border6" visible="false">
         <top>
             <Label text="inserisci 6 numeri 'DISTINTI' nell'array" BorderPane.alignment="CENTER" />
