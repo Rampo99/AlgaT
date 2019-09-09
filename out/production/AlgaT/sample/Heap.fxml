@@ -16,7 +16,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.StackPane?>
 
+<?import javafx.scene.shape.Box?>
+
 <GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller1" >
+
     <BorderPane stylesheets="@styles.css" fx:id="border1">
 
         <top>
@@ -40,7 +43,8 @@
         </right>
 
     </BorderPane>
-    <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border2" visible="false">
+
+    <BorderPane stylesheets="@styles.css" fx:id="border2" visible="false">
         <top>
             <Label text="Esempi di Min Heap" BorderPane.alignment="CENTER"/>
         </top>
@@ -65,7 +69,8 @@
             </HBox>
         </center>
     </BorderPane>
-    <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:id="border3" visible="false">
+
+    <BorderPane stylesheets="@styles.css" fx:id="border3" visible="false">
         <top>
             <Label text="Esempi di Max Heap" BorderPane.alignment="CENTER"/>
         </top>
@@ -91,7 +96,7 @@
         </center>
     </BorderPane>
 
-    <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" visible="false" fx:id="border4">
+    <BorderPane stylesheets="@styles.css" visible="false" fx:id="border4">
         <top>
             <Label text="Utilizza questa serie di operazioni sull'heap per capire come funzionano" BorderPane.alignment="CENTER" />
         </top>
@@ -111,6 +116,7 @@
                         <Button text="Extract_Max" disable="true" onAction="#fextractmax" fx:id="bextractmax"/>
                         <Button text="Size" disable="true" onAction="#fsize" fx:id="bsize"/>
                     </VBox>
+
                     <StackPane layoutX="870.0" layoutY="320.0" fx:id="sp7" />
                         <Circle fill="White"  radius="30.0" stroke="BLACK" strokeType="INSIDE" visible="false" fx:id="c7"/>
 
@@ -198,8 +204,6 @@
                         </HBox>
                     </center>
                 </BorderPane>
-
-
 
             </GridPane>
           </center>
