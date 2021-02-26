@@ -9,5 +9,5 @@ The project was carried out for the course of Algorithms and Data Structures of 
 [Filippo Perrina](https://github.com/Perghio)
 
 
-## Licence
+## License
 The project is not under any license
