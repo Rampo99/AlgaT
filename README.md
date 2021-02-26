@@ -1,13 +1,13 @@
 ﻿# AlgaT
-AlgaT (Alga as Tutorial) é un tutorial interattivo che mostra il funzionamento della struttura dati Heap & Heapsort
+AlgaT (Alga as Tutorial) is an interactive tutorial that shows how the Heap & Heapsort data structure works
 
-## Descrizione
-Il progetto é stato realizzato per il corso di Algoritmi e Strutture Dati dell'Universitá di Bologna, anno 18/19 
-## Contributori
+## Description
+The project was carried out for the course of Algorithms and Data Structures of the University of Bologna, year 18/19
+## Contributors
 [Lorenzo Ramponi](https://github.com/Rampo99)
 
 [Filippo Perrina](https://github.com/Perghio)
 
 
-## Licenze
-Il progetto non é sotto nessuna licenza
+## Licence
+The project is not under any license
